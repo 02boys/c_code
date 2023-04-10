@@ -1,5 +1,4 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-#define _CRT_SECURE_NO_WARNINGS 1
 //#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,7 +40,7 @@ BiTree Q_Pop(BiTree root)
     return Q.numQ[++Q.front];
 }
 
-int Q_empty() { //ÅĞ¶Ï¶ÔÁĞÊÇ·ñÎª¿Õ
+int Q_empty() { //åˆ¤æ–­å¯¹åˆ—æ˜¯å¦ä¸ºç©º
     return Q.rear == Q.front;
 }
 
@@ -63,7 +62,7 @@ void CreateBiTree(BiTree* T)
     }
 }
 
-//¶ş²æÊ÷µÄÏÈĞò±éÀú
+//äºŒå‰æ ‘çš„å…ˆåºéå†
 void PreOrderTraverse(BiTree T)
 {
     if (T == NULL) return;
@@ -71,7 +70,7 @@ void PreOrderTraverse(BiTree T)
     PreOrderTraverse(T->Lnode);
     PreOrderTraverse(T->Rnode);
 }
-//¶ş²æÊ÷µÄÖĞĞò±éÀú
+//äºŒå‰æ ‘çš„ä¸­åºéå†
 void InOrderTraverse(BiTree T)
 {
     if (T == NULL) return;
@@ -79,7 +78,7 @@ void InOrderTraverse(BiTree T)
     printf("%c ", T->data);
     InOrderTraverse(T->Rnode);
 }
-//¶ş²æÊ÷µÄºóĞò±éÀú
+//äºŒå‰æ ‘çš„ååºéå†
 void PostOrderTraverse(BiTree T)
 {
     if (T == NULL) return;
@@ -87,7 +86,7 @@ void PostOrderTraverse(BiTree T)
     PostOrderTraverse(T->Rnode);
     printf("%c ", T->data);
 }
-//¶ş²æÊ÷µÄ²ã´Î±éÀú
+//äºŒå‰æ ‘çš„å±‚æ¬¡éå†
 void LevelOrderTraverse(BiTree T)
 {
     if (T == NULL) return;
@@ -106,16 +105,16 @@ int main()
 {
     BiTree T;
     CreateBiTree(&T);
-    printf("Ç°Ğò±éÀú½á¹ûÎª :\n");
+    printf("å‰åºéå†ç»“æœä¸º :\n");
     PreOrderTraverse(T);
 
-    printf("\n\nÖĞĞò±éÀú½á¹ûÎª :\n");
+    printf("\n\nä¸­åºéå†ç»“æœä¸º :\n");
     InOrderTraverse(T);
 
-    printf("\n\nºóĞò±éÀú½á¹ûÎª :\n");
+    printf("\n\nååºéå†ç»“æœä¸º :\n");
     PostOrderTraverse(T);
 
-    printf("\n\n²ã´Î±éÀú½á¹ûÎª :\n\n");
+    printf("\n\nå±‚æ¬¡éå†ç»“æœä¸º :\n\n");
     LevelOrderTraverse(T);
     return 0;
 }
